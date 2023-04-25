@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+nav {
+  background: #ffb8ca;
+  height: 80px;
+  width: 100%;
+}
+.enlace {
+  position: absolute;
+  padding: 20px 10px;
+}
+.logo {
+  width: 199px;
+  height: 50px;
+}
+nav ul {
+  float: right;
+  margin-right: 160px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 20 0px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  font-size: 18px;
+  padding: 7px 13px;
+}
+li a.active,
+li a:hover {
+  color: #d41443;
+  transition: 0.5s;
+}
+.hidden-menu {
+  font-size: 50px;
+  position: absolute;
+  top: 15px;
+  right: 38px;
+  cursor: pointer;
+  display: none;
+  transition: 0.4s;
+}
+.btn-submit__hamburger {
+  width: 159px;
+  height: 44px;
+  background: #ffffff;
+  border-color: #ffffff;
+  border-radius: 22px;
+  color: rgba(212, 20, 67, 1);
+  position: absolute;
+  margin-top: 20px;
+  right: 20px;
+}
+/*configurar el boton de abrir menu hamburgesa*/
+.checkbtn-open {
+  font-size: 30px;
+  color: #ffffff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  /*display: none;*/
+}
+
+/*configurar el boton de cerrar*/
+.checkbtn-close {
+  font-size: 30px;
+  color: #ffffff;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+/* ocular la caja del checkbox*/
+#check {
+  display: none;
+}
+
+header {
+  background-color: #da1a4a;
+  height: calc(100vh - 80px);
+}
+/*********************************************************************************/
+
+/*responsive  */
+/*tablet hasta 952px la pantalla*/
+@media (max-width: 952px) {
+  .enlace {
+    padding-left: 20px;
+  }
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+/***********************************************************************/
+/*celulares hasta 858px la pantalla*/
+@media (max-width: 858px) {
+  .checkbtn-open {
+    display: block;
+  }
+  .checkbtn-close {
+    display: none;
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #e17992;
+    top: 0px;
+    left: -100%;
+    text-align: left;
+    transition: all 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 15px 0;
+    line-height: 30px;
+  }
+  nav ul li a {
+    font-size: 20px;
+  }
+  li a:hover,
+  li a.active {
+    background: none;
+    color: red;
+  }
+  .btn-submit__hamburger {
+    display: none;
+    position: absolute;
+    left: 300px;
+  }
+}
+#check:checked ~ ul {
+  left: 0;
+}
